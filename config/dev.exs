@@ -3,6 +3,8 @@ use Mix.Config
 config :eventstore, EventStore.Storage,
   serializer: Commanded.Serialization.JsonSerializer,
   username: System.get_env("DB_USERNAME"),
+  password: System.get_env("DB_USERNAME"),
+  port: System.get_env("DB_PORT"),
   database: "freshcom_eventstore_dev",
   hostname: "localhost",
   pool_size: 10
@@ -24,6 +26,8 @@ config :freshcom, Freshcom.Repo,
   database: "freshcom_projections_dev",
   hostname: "localhost",
   username: System.get_env("DB_USERNAME"),
+  password: System.get_env("DB_USERNAME"),
+  port: System.get_env("DB_PORT"),
   pool_size: 10
 
 config :freshcom_web, FreshcomWeb.Endpoint,
